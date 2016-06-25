@@ -1,6 +1,6 @@
 # kt-webhook-signature
 
-[![CI](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/ci.yml)
+[![CI](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/webhook-signature)](https://central.sonatype.com/artifact/com.philiprehberger/webhook-signature)
 
 HMAC webhook signature creation and verification with timing-safe comparison.
