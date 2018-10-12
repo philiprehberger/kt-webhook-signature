@@ -1,6 +1,6 @@
 # webhook-signature
 
-[![CI](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml)
+[![Tests](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-webhook-signature/actions/workflows/publish.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/webhook-signature)](https://central.sonatype.com/artifact/com.philiprehberger/webhook-signature)
 [![License](https://img.shields.io/github/license/philiprehberger/kt-webhook-signature)](LICENSE)
 
@@ -11,17 +11,7 @@ HMAC webhook signature creation and verification with timing-safe comparison.
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-dependencies {
-    implementation("com.philiprehberger:webhook-signature:0.1.3")
-}
-```
-
-### Gradle (Groovy)
-
-```groovy
-dependencies {
-    implementation 'com.philiprehberger:webhook-signature:0.1.0'
-}
+implementation("com.philiprehberger:webhook-signature:0.1.4")
 ```
 
 ### Maven
@@ -30,7 +20,7 @@ dependencies {
 <dependency>
     <groupId>com.philiprehberger</groupId>
     <artifactId>webhook-signature</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
 </dependency>
 ```
 
