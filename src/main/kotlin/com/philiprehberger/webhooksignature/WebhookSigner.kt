@@ -21,7 +21,7 @@ import kotlin.time.Duration.Companion.minutes
  * @property secret the shared secret key
  * @property algorithm the HMAC algorithm to use (default: [HmacAlgorithm.SHA256])
  */
-class WebhookSigner(
+public class WebhookSigner(
     private val secret: String,
     private val algorithm: HmacAlgorithm = HmacAlgorithm.SHA256,
 ) {
@@ -34,7 +34,7 @@ class WebhookSigner(
      * @param timestamp the Unix timestamp in seconds
      * @return the hex-encoded HMAC signature
      */
-    fun sign(payload: String, timestamp: Long): String {
+    public fun sign(payload: String, timestamp: Long): String {
         val content = "$timestamp.$payload"
         val mac = Mac.getInstance(algorithm.javaName)
         mac.init(SecretKeySpec(secret.toByteArray(), algorithm.javaName))
@@ -54,7 +54,7 @@ class WebhookSigner(
      * @param tolerance the maximum age of the timestamp; [Duration.ZERO] disables the check (default: 5 minutes)
      * @return `true` if the signature is valid and the timestamp is within tolerance
      */
-    fun verify(
+    public fun verify(
         payload: String,
         signature: String,
         timestamp: Long,
@@ -73,7 +73,7 @@ class WebhookSigner(
         return timingSafeEquals(expected.toByteArray(), signature.toByteArray())
     }
 
-    companion object {
+    public companion object {
         /**
          * Creates a [WebhookSigner] configured for Stripe webhook verification.
          *
@@ -82,7 +82,7 @@ class WebhookSigner(
          * @param secret the Stripe webhook signing secret (including `whsec_` prefix)
          * @return a [WebhookSigner] configured for Stripe
          */
-        fun stripe(secret: String): WebhookSigner =
+        public fun stripe(secret: String): WebhookSigner =
             WebhookSigner(secret, HmacAlgorithm.SHA256)
 
         /**
@@ -93,7 +93,7 @@ class WebhookSigner(
          * @param secret the GitHub webhook secret
          * @return a [WebhookSigner] configured for GitHub
          */
-        fun github(secret: String): WebhookSigner =
+        public fun github(secret: String): WebhookSigner =
             WebhookSigner(secret, HmacAlgorithm.SHA256)
     }
 }

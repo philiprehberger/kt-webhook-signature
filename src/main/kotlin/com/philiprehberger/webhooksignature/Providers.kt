@@ -8,7 +8,7 @@ package com.philiprehberger.webhooksignature
  * @param header the `Stripe-Signature` header value
  * @return a pair of (timestamp, signature), or `null` if the header format is invalid
  */
-fun parseStripeSignatureHeader(header: String): Pair<Long, String>? {
+public fun parseStripeSignatureHeader(header: String): Pair<Long, String>? {
     val parts = header.split(",").associate { part ->
         val (key, value) = part.split("=", limit = 2).takeIf { it.size == 2 } ?: return null
         key to value
@@ -26,7 +26,7 @@ fun parseStripeSignatureHeader(header: String): Pair<Long, String>? {
  * @param header the `X-Hub-Signature-256` header value
  * @return the hex-encoded signature string, or `null` if the header format is invalid
  */
-fun parseGithubSignatureHeader(header: String): String? {
+public fun parseGithubSignatureHeader(header: String): String? {
     val prefix = "sha256="
     if (!header.startsWith(prefix)) return null
     return header.removePrefix(prefix)

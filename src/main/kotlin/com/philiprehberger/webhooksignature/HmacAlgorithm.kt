@@ -5,7 +5,7 @@ package com.philiprehberger.webhooksignature
  *
  * @property javaName the Java Cryptography Architecture standard name for this algorithm
  */
-enum class HmacAlgorithm(val javaName: String) {
+public enum class HmacAlgorithm(public val javaName: String) {
     /** HMAC with SHA-1 digest */
     SHA1("HmacSHA1"),
     /** HMAC with SHA-256 digest */
